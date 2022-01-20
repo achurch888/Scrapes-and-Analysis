@@ -4,11 +4,13 @@
 # In[ ]:
 
 
-#attempting to run some analytics on a db of napoleonic injuries from some czech website
+#In this file I am attempting to run some analytics on a db of napoleonic injuries from some czech website. This is a work in progress
+#So far, I have completed the initial scrape of the data
+#Stay tuned to see the analytics
 
-
-# In[74]:
-
+import requests
+from bs4 import BeautifulSoup
+import pandas as pd
 
 #function to convert ages into integers
 def numeric_ages(age):
@@ -16,15 +18,7 @@ def numeric_ages(age):
     if age.isnumeric() == True:
         age = int(age)
     return age
-        
 
-
-# In[76]:
-
-
-import requests
-from bs4 import BeautifulSoup
-import pandas as pd
 
 #scrape page with Bsoup and requests
 url = 'https://www.myczechroots.com/names-databases/database-of-casualties-of-napoleonic-wars-in-military-hospitals'
@@ -83,10 +77,5 @@ for i in range(len(regiments)):
     
 #Bon Apetit
 print(list)
-
-
-# In[ ]:
-
-
 
 
